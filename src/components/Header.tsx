@@ -18,10 +18,20 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const handleSmoothScroll = (href: string) => {
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+        setIsOpen(false) // Close mobile menu if open
+      }
+    }
+  }
+
   const navItems = [
     { name: 'Ana Sayfa', href: '/' },
     { name: 'Projeler', href: '/projeler' },
-    { name: 'Hakkımızda', href: '/hakkimizda' },
+    { name: 'Hakkımızda', href: '#hakkimizda' },
     { name: 'Kariyer', href: '/kariyer' },
     { name: 'İletişim', href: '/iletisim' },
   ]
@@ -56,14 +66,25 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="relative text-primary-white hover:text-primary-neon-blue transition-colors duration-300 group"
-              >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-neon-blue transition-all duration-300 group-hover:w-full"></span>
-              </Link>
+              item.href.startsWith('#') ? (
+                <button
+                  key={item.name}
+                  onClick={() => handleSmoothScroll(item.href)}
+                  className="relative text-primary-white hover:text-primary-neon-blue transition-colors duration-300 group"
+                >
+                  {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-neon-blue transition-all duration-300 group-hover:w-full"></span>
+                </button>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="relative text-primary-white hover:text-primary-neon-blue transition-colors duration-300 group"
+                >
+                  {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-neon-blue transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              )
             ))}
           </nav>
 
@@ -104,13 +125,22 @@ const Header = () => {
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <Link
-                      href={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className="block text-primary-white hover:text-primary-neon-blue transition-colors duration-300 py-2"
-                    >
-                      {item.name}
-                    </Link>
+                    {item.href.startsWith('#') ? (
+                      <button
+                        onClick={() => handleSmoothScroll(item.href)}
+                        className="block text-primary-white hover:text-primary-neon-blue transition-colors duration-300 py-2 text-left"
+                      >
+                        {item.name}
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className="block text-primary-white hover:text-primary-neon-blue transition-colors duration-300 py-2"
+                      >
+                        {item.name}
+                      </Link>
+                    )}
                   </motion.div>
                 ))}
                 <motion.div

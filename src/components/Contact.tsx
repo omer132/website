@@ -15,6 +15,9 @@ const Contact = () => {
     message: ''
   })
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -27,11 +30,35 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Contact form submitted:', formData)
-    alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.')
-    setFormData({ name: '', email: '', subject: '', message: '' })
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await response.json()
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      } else {
+        setSubmitStatus('error')
+        console.error('Form submission error:', result.error)
+      }
+    } catch (error) {
+      setSubmitStatus('error')
+      console.error('Network error:', error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
@@ -262,13 +289,39 @@ const Contact = () => {
 
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full flex items-center justify-center space-x-2 px-8 py-4 bg-gradient-to-r from-primary-neon-blue to-primary-neon-purple text-white rounded-xl hover:shadow-lg hover:shadow-primary-neon-blue/50 transition-all font-medium"
+                  disabled={isSubmitting}
+                  whileHover={!isSubmitting ? { scale: 1.05 } : {}}
+                  whileTap={!isSubmitting ? { scale: 0.95 } : {}}
+                  className={`w-full flex items-center justify-center space-x-2 px-8 py-4 rounded-xl transition-all font-medium ${
+                    isSubmitting
+                      ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
+                      : 'bg-gradient-to-r from-primary-neon-blue to-primary-neon-purple text-white hover:shadow-lg hover:shadow-primary-neon-blue/50'
+                  }`}
                 >
-                  <Send size={20} />
-                  <span>Mesajı Gönder</span>
+                  <Send size={20} className={isSubmitting ? 'animate-spin' : ''} />
+                  <span>{isSubmitting ? 'Gönderiliyor...' : 'Mesajı Gönder'}</span>
                 </motion.button>
+
+                {/* Status Messages */}
+                {submitStatus === 'success' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-4 bg-green-500/20 border border-green-500/50 rounded-xl text-green-400 text-center"
+                  >
+                    ✅ Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.
+                  </motion.div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-4 bg-red-500/20 border border-red-500/50 rounded-xl text-red-400 text-center"
+                  >
+                    ❌ Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.
+                  </motion.div>
+                )}
               </form>
             </motion.div>
           </div>

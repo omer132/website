@@ -7,6 +7,7 @@ AKKUS web sitesi, şirketin teknoloji alanındaki hizmetlerini, projelerini ve k
 - **Modern Tasarım**: Siyah temalı, minimal ve etkileyici görsel efektler
 - **Responsive**: Tüm cihazlara uyumlu (mobile-first yaklaşım)
 - **Animasyonlar**: Framer Motion ile smooth animasyonlar
+- **İletişim Formu**: Çalışan email gönderme sistemi
 - **SEO Optimized**: Temel SEO optimizasyonu
 - **Performance**: Hızlı yükleme ve optimize edilmiş performans
 - **Modern Tech Stack**: Next.js 14, TypeScript, Tailwind CSS
@@ -18,6 +19,7 @@ AKKUS web sitesi, şirketin teknoloji alanındaki hizmetlerini, projelerini ve k
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
+- **Email**: Nodemailer (Gmail SMTP)
 - **Fonts**: Google Fonts (Poppins, Montserrat, Roboto)
 
 ## 📦 Kurulum
@@ -33,12 +35,25 @@ AKKUS web sitesi, şirketin teknoloji alanındaki hizmetlerini, projelerini ve k
    npm install
    ```
 
-3. **Development server'ı başlatın**
+3. **Environment Variables Ayarlayın**
+   
+   Proje kök dizininde `.env.local` dosyası oluşturun:
+   ```env
+   EMAIL_USER=your-gmail@gmail.com
+   EMAIL_PASS=your-app-password
+   ```
+   
+   **Gmail Kurulumu:**
+   - Gmail hesabınızda 2FA (Two-Factor Authentication) aktif olmalı
+   - Google Account > Security > App passwords bölümünden yeni bir app password oluşturun
+   - Bu app password'ü `EMAIL_PASS` olarak kullanın
+
+4. **Development server'ı başlatın**
    ```bash
    npm run dev
    ```
 
-4. **Tarayıcıda açın**
+5. **Tarayıcıda açın**
    ```
    http://localhost:3000
    ```
