@@ -44,7 +44,7 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Telefon",
-      value: "+90 212 XXX XX XX",
+      value: "+90 552 507 91 46",
       description: "Pazartesi - Cuma 09:00-18:00"
     },
     {
