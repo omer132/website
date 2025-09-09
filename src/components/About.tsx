@@ -141,8 +141,7 @@ const About = () => {
               <motion.div 
                 className="glass-effect p-6 rounded-xl card-hover"
                 whileHover={{ 
-                  scale: 1.02,
-                  boxShadow: "0 0 30px rgba(0, 245, 255, 0.3)"
+                  scale: 1.02
                 }}
                 transition={{ duration: 0.3 }}
               >
@@ -159,8 +158,7 @@ const About = () => {
               <motion.div 
                 className="glass-effect p-6 rounded-xl card-hover"
                 whileHover={{ 
-                  scale: 1.02,
-                  boxShadow: "0 0 30px rgba(255, 107, 53, 0.3)"
+                  scale: 1.02
                 }}
                 transition={{ duration: 0.3 }}
               >

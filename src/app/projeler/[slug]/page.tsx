@@ -15,7 +15,7 @@ const projects = [
     title: "E-Ticaret Platformu",
     description: "Modern ve kullanıcı dostu e-ticaret çözümü. React ve Node.js ile geliştirilmiş tam kapsamlı platform.",
     longDescription: "Bu proje, modern e-ticaret ihtiyaçlarını karşılamak üzere geliştirilmiş kapsamlı bir platformdur. Kullanıcı dostu arayüz, güvenli ödeme sistemi, stok yönetimi ve detaylı analitik raporları içerir. Mobil uyumlu tasarım ve hızlı yükleme süreleri ile müşteri deneyimini optimize eder.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+    image: "/ecommerce-main.jpg",
     category: "Web Geliştirme",
     technologies: ["React", "Node.js", "MongoDB", "Stripe", "Redux", "Express"],
     link: "/projeler/e-ticaret",
@@ -49,9 +49,9 @@ const projects = [
       "Progressive Web App (PWA) özellikleri"
     ],
     images: [
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
+      "/ecommerce-1.jpg",
+      "/ecommerce-2.jpg",
+      "/ecommerce-3.jpg"
     ]
   },
   {
@@ -60,7 +60,7 @@ const projects = [
     title: "Mobil Uygulama",
     description: "iOS ve Android için geliştirilmiş cross-platform mobil uygulama. Flutter ile yapılmış, performanslı ve kullanıcı dostu.",
     longDescription: "Cross-platform mobil uygulama geliştirme projesi. Flutter framework kullanılarak hem iOS hem de Android platformları için tek kod tabanından uygulama geliştirildi. Hızlı performans, native görünüm ve kullanıcı dostu arayüz tasarımı ile öne çıkıyor.",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
+    image: "/mobile-app-main.jpg",
     category: "Mobil Geliştirme",
     technologies: ["Flutter", "Dart", "Firebase", "REST API", "Provider", "GetX"],
     link: "/projeler/mobil-uygulama",
@@ -94,9 +94,9 @@ const projects = [
       "Widget optimizasyonu ve lazy loading"
     ],
     images: [
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+      "/mobile-app-1.jpg",
+      "/mobile-app-2.jpg",
+      "/mobile-app-3.jpg"
     ]
   },
   {
@@ -105,7 +105,7 @@ const projects = [
     title: "AI Chatbot",
     description: "Yapay zeka destekli müşteri hizmetleri chatbot'u. OpenAI API entegrasyonu ile doğal dil işleme özellikleri.",
     longDescription: "Yapay zeka teknolojilerini kullanarak geliştirilmiş akıllı chatbot sistemi. OpenAI API entegrasyonu ile doğal dil işleme, sentiment analizi ve kişiselleştirilmiş yanıtlar sunar. 7/24 müşteri desteği sağlayarak işletmelerin müşteri hizmetlerini optimize eder.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+    image: "/iot-platform-main.jpg",
     category: "Yapay Zeka",
     technologies: ["Python", "OpenAI", "FastAPI", "PostgreSQL", "NLP", "Redis"],
     link: "/projeler/ai-chatbot",
@@ -139,9 +139,9 @@ const projects = [
       "Microservice mimarisi"
     ],
     images: [
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+      "/iot-platform-1.jpg",
+      "/iot-platform-2.jpg",
+      "/iot-platform-3.jpg"
     ]
   },
   {
@@ -150,7 +150,7 @@ const projects = [
     title: "Dashboard Analytics",
     description: "Gerçek zamanlı veri analizi ve görselleştirme dashboard'u. Büyük veri işleme kapasitesi ile detaylı raporlar.",
     longDescription: "Büyük veri analizi ve görselleştirme platformu. Gerçek zamanlı veri işleme, interaktif grafikler ve detaylı raporlama özellikleri sunar. İşletmelerin veri odaklı kararlar almasını destekleyen kapsamlı bir analitik çözümü.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+    image: "/data-analytics-main.jpg",
     category: "Veri Analizi",
     technologies: ["Vue.js", "D3.js", "Python", "Redis", "Apache Kafka", "Elasticsearch"],
     link: "/projeler/dashboard",
@@ -184,9 +184,9 @@ const projects = [
       "JWT tabanlı güvenlik sistemi"
     ],
     images: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+      "/data-analytics-1.jpg",
+      "/data-analytics-2.jpg",
+      "/data-analytics-3.jpg"
     ]
   },
   {
@@ -195,7 +195,7 @@ const projects = [
     title: "Blockchain DApp",
     description: "Dezentralize uygulama. Ethereum blockchain üzerinde geliştirilmiş akıllı kontratlar ve güvenli işlemler.",
     longDescription: "Ethereum blockchain teknolojisi kullanılarak geliştirilmiş dezentralize uygulama. Akıllı kontratlar, güvenli işlemler ve şeffaf kayıt sistemi ile blockchain'in avantajlarını kullanır. Web3 teknolojileri ile modern web standartlarında geliştirildi.",
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop",
+    image: "/ai-chatbot-main.jpg",
     category: "Blockchain",
     technologies: ["Solidity", "Web3.js", "React", "MetaMask", "Hardhat", "IPFS"],
     link: "/projeler/blockchain-dapp",
@@ -229,9 +229,9 @@ const projects = [
       "Web3.js ve MetaMask entegrasyonu"
     ],
     images: [
-      "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+      "/ai-chatbot-1.jpg",
+      "/ai-chatbot-2.jpg",
+      "/ai-chatbot-3.jpg"
     ]
   },
   {
@@ -240,7 +240,7 @@ const projects = [
     title: "IoT Platform",
     description: "Nesnelerin İnterneti cihazları için yönetim platformu. Gerçek zamanlı izleme ve kontrol sistemi.",
     longDescription: "IoT cihazları için kapsamlı yönetim ve izleme platformu. Gerçek zamanlı veri toplama, cihaz kontrolü ve analitik özellikleri sunar. MQTT protokolü ile güvenli iletişim ve Docker containerization ile kolay deployment sağlar.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
+    image: "/blockchain-main.jpg",
     category: "IoT",
     technologies: ["Node.js", "MQTT", "MongoDB", "Docker", "Grafana", "InfluxDB"],
     link: "/projeler/iot-platform",
@@ -274,9 +274,9 @@ const projects = [
       "Microservice mimarisi ve Docker"
     ],
     images: [
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+      "/blockchain-1.jpg",
+      "/blockchain-2.jpg",
+      "/blockchain-3.jpg"
     ]
   }
 ]

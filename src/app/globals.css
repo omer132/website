@@ -84,4 +84,16 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .rotate-y-12 {
+    transform: rotateY(12deg);
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 10px currentColor;
+  }
 }

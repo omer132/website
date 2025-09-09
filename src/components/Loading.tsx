@@ -160,12 +160,12 @@ const Loading = () => {
             style={{
               left: `${10 + i * 10}%`,
               top: `${20 + i * 8}%`,
-            }}
+            } as React.CSSProperties}
           />
         ))}
-             </div>
-     </div>
-   )
+      </div>
+    </div>
+  )
 }
 
 export default Loading

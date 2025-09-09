@@ -1,8 +1,8 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { ExternalLink, Github, ArrowLeft, Search, Sparkles, Zap, Target, Clock } from 'lucide-react'
+import { ExternalLink, Github, ArrowLeft, Search, Sparkles, Target, Clock } from 'lucide-react'
 import Link from 'next/link'
 import { useState, useRef } from 'react'
 import Footer from '../../components/Footer'
@@ -111,12 +111,12 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 100, rotateX: -15 }}
-      animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
+      initial={{ opacity: 0, y: 100 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: index * 0.2 }}
-      className="group relative perspective-1000"
+      className="group relative"
     >
-      <div className="relative transform-gpu transition-all duration-700 group-hover:rotate-y-12 group-hover:scale-105">
+      <div className="relative transform-gpu transition-all duration-700 group-hover:scale-105">
         {/* Main Card */}
         <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 shadow-2xl">
           {/* Gradient Overlay */}
@@ -251,13 +251,6 @@ const ProjectsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("Tümü")
   const [searchTerm, setSearchTerm] = useState("")
   const containerRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  })
-
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 
   const filteredProjects = projects.filter(project => {
     const matchesCategory = selectedCategory === "Tümü" || project.category === selectedCategory
@@ -270,7 +263,6 @@ const ProjectsPage = () => {
     <div ref={containerRef} className="min-h-screen bg-gradient-to-br from-primary-black via-gray-900 to-primary-black relative overflow-hidden">
       {/* Animated Background */}
       <motion.div
-        style={{ y, opacity }}
         className="absolute inset-0"
       >
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-neon-blue/10 rounded-full blur-3xl animate-pulse" />
