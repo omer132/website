@@ -1,0 +1,11 @@
+[33mcommit 4ecac7a29742da1ac97b6c8a556eeff286032817[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: omerakkus <omerakkusakkus46@gmail.com>
+Date:   Wed Sep 10 01:15:54 2025 +0300
+
+    Update contact and career pages, email setup documentation
+
+ VERCEL_EMAIL_SETUP.md     | 1 [32m+[m
+ src/app/iletisim/page.tsx | 1 [32m+[m
+ src/app/kariyer/page.tsx  | 1 [32m+[m
+ vercel.json               | 1 [32m+[m
+ 4 files changed, 4 insertions(+)
