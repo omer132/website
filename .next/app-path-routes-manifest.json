@@ -1,0 +1,12 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/api/contact-resend/route": "/api/contact-resend",
+  "/api/contact/route": "/api/contact",
+  "/api/test-env/route": "/api/test-env",
+  "/api/test-email/route": "/api/test-email",
+  "/iletisim/page": "/iletisim",
+  "/page": "/",
+  "/projeler/[slug]/page": "/projeler/[slug]",
+  "/projeler/page": "/projeler",
+  "/kariyer/page": "/kariyer"
+}
