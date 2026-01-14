@@ -6,12 +6,23 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-primary-black">
+    <>
       <Header />
-      <Hero />
-      <Projects />
-      <About />
+      <main className="min-h-screen bg-primary-black">
+        {/* Hero: Giriş Bölümü */}
+        <Hero />
+        
+        {/* Projects: Projeler Bölümü */}
+        <section id="projects">
+          <Projects />
+        </section>
+
+        {/* About: Hakkımızda Bölümü */}
+        <section id="about">
+          <About />
+        </section>
+      </main>
       <Footer />
-    </main>
+    </>
   )
 }
